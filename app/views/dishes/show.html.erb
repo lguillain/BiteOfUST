@@ -12,13 +12,42 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @dish.image %>
+  <%= image_tag @dish.image.url(:med) %>
 </p>
 
 <p>
   <strong>Rating:</strong>
   <%= @dish.rating %>
 </p>
+
+
+
+<div class="posts-wrapper row">
+	<% if @dish.comments %>
+		<% @dish.comments.each do |comment| %>
+		<div class="comment">
+			<div class="username">
+				<%= comment.username %>
+			</div>
+			<div class="comment-content">
+				<%= comment.content %>
+			</div>
+		</div>
+		<% end %>
+	<% end %>
+</div>
+
+	<div class="comment-form">
+		<%= form_for [@dish.comments.new] do |f| %>
+			<%= f.hidden_field :id, :value => @dish.id%>
+			<%= f.text_field :username, placeholder: 'Your Name' %>
+			<%= f.text_field :content, placeholder: 'Add a comment...' %>
+			<%= submit_tag("Comment") %>
+		<% end %>
+	</div>
+
+
+
 
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Back', dishes_path %>
