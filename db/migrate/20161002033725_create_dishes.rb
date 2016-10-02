@@ -3,7 +3,6 @@ class CreateDishes < ActiveRecord::Migration
     create_table :dishes do |t|
       t.string :name
       t.string :description
-      t.string :image
       t.float :rating
 
       t.timestamps null: false

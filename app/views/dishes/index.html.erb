@@ -18,7 +18,7 @@
       <tr>
         <td><%= dish.name %></td>
         <td><%= dish.description %></td>
-        <td><%= dish.image %></td>
+        <td><%= image_tag dish.image.url(:med) %></td>
         <td><%= dish.rating %></td>
         <td><%= link_to 'Show', dish %></td>
         <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
