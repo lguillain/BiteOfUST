@@ -8,6 +8,32 @@
 </head>
 <body>
 
+<nav class="navbar navbar-default">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" data-target="#bs-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand">
+        <%= link_to "ABiteOfUST", root_path %>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "New Dish", new_dish_path %>
+        </li>
+        <li>
+          <%= link_to "About", '#' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
 <%= yield %>
 
 </body>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002050921) do
+ActiveRecord::Schema.define(version: 20161002060354) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "username"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161002050921) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "menuItem"
   end
 
 end
